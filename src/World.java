@@ -8,12 +8,13 @@ public class World {
 		Player player2 = new Player();
 		Dealer dealer = new Dealer();
 		dealer.dealCards();
-		System.out.println();
-		for(Player player : Player.players){
-			System.out.println(player.cardsInHand);	
-		}
-		
-		System.out.println(dealer.cardsInHand);
+//		System.out.println();
+//		for(Player player : Player.players){
+//			System.out.println(player.cardsInHand);	
+//		}
+//		
+//		System.out.println(dealer.cardsInHand);
+		System.out.println(player2.calcTotal());
 	}
 
 }
