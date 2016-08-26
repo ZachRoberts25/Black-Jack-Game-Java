@@ -4,7 +4,7 @@ import java.util.List;
 public class Deck  {
 	public List<Card> cards;
 	public Deck() {
-		List<Card> cards = new ArrayList<Card>();
+		List<Card> cards = new ArrayList<Card>(100000);
 		String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
 		String[] ranks = {"A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"};
 		for(int i = 0; i < ranks.length; i++) {

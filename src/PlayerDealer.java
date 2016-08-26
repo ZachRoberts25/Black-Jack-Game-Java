@@ -23,25 +23,20 @@ public class PlayerDealer {
 
 	public int calcTotal() {
 		int total = 0;
-		// this.cardsInHand
-		Card aceSpades = new Card("A", "Spades");
-		Card aceDiamonds = new Card("A", "Diamonds");
-		List<Card> array = new ArrayList<Card>();
-		array.add(aceSpades);
-		array.add(aceDiamonds);
-		for (Card card : array) {
+		
+		for (Card card : this.cardsInHand) {
 			total += card.getValue();
 			
 			if (total > 21) {
-				for (Card card1 : array) {
+				for (Card card1 : this.cardsInHand) {
 					if (card1.rank == "A") {
 						
-						array.set(array.indexOf(card1), new Card("A1", "Spades"));
+						this.cardsInHand.set(this.cardsInHand.indexOf(card1), new Card("A1", "Spades"));
 						break;
 					}
 				}
 						total -= total;						
-						for (Card card2 : array) {
+						for (Card card2 : this.cardsInHand) {
 							total += card2.getValue();
 						}
 						
