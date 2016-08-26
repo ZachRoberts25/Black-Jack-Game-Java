@@ -33,6 +33,10 @@ public class Dealer extends PlayerDealer {
 
 	public Card dealCard() {
 		Random rand = new Random();
+//		System.out.println(this.deck.cards.size() - 1);
+		if(this.deck.cards.size() < 2){
+			this.deck = new Deck();
+		}
 		int n = rand.nextInt(this.deck.cards.size() - 1);
 		Card card = this.deck.cards.get(n);
 		this.deck.cards.remove(n);

@@ -18,8 +18,8 @@ public class Player extends PlayerDealer{
 	}
 	public String determineWin(Dealer dealer){
 		String win = "";
-		System.out.println(this.calcTotal());
-		System.out.println(dealer.calcTotal());
+//		System.out.println(this.calcTotal());
+//		System.out.println(dealer.calcTotal());
 		if(dealer.calcTotal() == this.calcTotal()){ 
 			 win = "tie";
 		}else if((this.calcTotal() > 21)){

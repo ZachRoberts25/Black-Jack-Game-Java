@@ -2,27 +2,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class World {
-	public static int ties;
-	public static int wins;
-	public static int losses;
-	public static int errors;
-	public static int games;
+	public static double ties;
+	public static double wins;
+	public static double losses;
+	public static double errors;
+	public static double games;
 
 	public static void main(String[] args) {
-		for(int i = 0; i < 5; i++){
+		for(int i = 0; i < 1000; i++){
 		World world = new World();
 		Player player1 = new Player();
 		Dealer dealer = new Dealer();
 		dealer.dealCards();
 		world.hitOrStay(dealer);
 		world.dealerHit(dealer);
-		world.determineWinners(dealer);
+		world.determineWinners(dealer, player1);
 		}
-		 System.out.println("ties " + World.ties);
-		 System.out.println("wins " + World.wins);
-		 System.out.println("losses " + World.losses);
+		 System.out.println("ties percantage: " + (World.ties/World.games) * 100);
+		 System.out.println("wins percentage: " + (World.wins/World.games) * 100);
+		 System.out.println("losses percentage: " + (World.losses/World.games) * 100);
 		 System.out.println("errors " + World.errors);
-		 System.out.println("games" + World.games);
+		 System.out.println("games " + World.games);
 
 	}
 
@@ -50,26 +50,26 @@ public class World {
 		}
 	}
 
-	public void determineWinners(Dealer dealer) {
-		for (Player player : Player.players) {
+	public void determineWinners(Dealer dealer, Player player) {
+//		for (Player player : Player.players) {
 			String outcome = player.determineWin(dealer);
 			switch (outcome) {
 			case "tie":
-				World.ties += 1;
+				World.ties++;
 				break;
 			case "error":
-				World.errors += 1;
+				World.errors++;
 				break;
 			case "true":
-				World.wins += 1;
+				World.wins++;
 				break;
 			case "false":
-				World.losses += 1;
+				World.losses++;
 				break;
 			}
 
-		}
-		games += 1;
+//		}
+		World.games++;
 
 	}
 }
